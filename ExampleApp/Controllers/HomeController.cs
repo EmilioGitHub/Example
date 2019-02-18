@@ -13,8 +13,11 @@ namespace ExampleApp.Controllers
 
         public ActionResult Index()
         {
+            uint a = 777;
+
             IEnumerable<Product> products = db.Products;
             ViewBag.Products = products;
+            ViewBag.A = a;
             return View();
         }
 

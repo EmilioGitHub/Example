@@ -8,18 +8,16 @@ namespace ExampleApp.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public uint Price { get; set; }
-        public Product()
+        /*public Product()
         {
-            this.Name = "";
-            this.Description = "";
-            this.Price = default(uint);
+
         }
         public Product(string name, string desc, uint price)
         {
             this.Name = name;
             this.Description = desc;
             this.Price = price;
-        }
+        }*/
         public abstract void Info();
     }
 }

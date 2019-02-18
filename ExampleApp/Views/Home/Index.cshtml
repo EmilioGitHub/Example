@@ -1,8 +1,33 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron">
-    <h2>Resident Evil 2</h2>
-    <img style="width: 900px;" src="@Url.Content("~/Content/im.png")" alt="" />
-</div>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Интернет магазин</title>
+</head>
+<body>
+    <div>
+        <h3>Ассортимент</h3>
+        <table>
+            <tr>
+                <td><strong>Название</strong></td>
+                <td><p><strong>О товаре</strong></p></td>
+                <td><p><strong>Цена</strong></p></td>
+            </tr>
+            @foreach(var p in ViewBag.Products)
+            {
+            <tr>
+                <td><p>@p.Name</p></td>
+                <td><p>@p.Description</p></td>
+                <td><p>@p.Price</p></td>
+                <td><p><a href="Home/Buy/@p.Id">Купить</a></p></td>
+            </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

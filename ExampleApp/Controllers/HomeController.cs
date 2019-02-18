@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExampleApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,29 @@ namespace ExampleApp.Controllers
 {
     public class HomeController : Controller
     {
+        ProductContext db = new ProductContext();
+
         public ActionResult Index()
         {
+            IEnumerable<Product> products = db.Products;
+            ViewBag.Products = products;
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult Buy(int id)
+        {
+            ViewBag.Id = id;
+            return View();
+        }
+
+        [HttpPost]
+        public string Buy(Purchase pur)
+        {
+            pur.Date = DateTime.Now;
+            db.Purchases.Add(pur);
+            db.SaveChanges();
+            return "Товар №" + pur.PurchaseId + " приобретен!";
         }
 
         public ActionResult About()

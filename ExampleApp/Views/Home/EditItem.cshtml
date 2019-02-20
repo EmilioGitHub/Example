@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "EditItem";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Редактирование товара</title>
+</head>
+<body>
+    <h3>AddItem</h3>
+    <form method="post" action="">
+        <input type="hidden" value="@ViewBag.Id" name="Id" />
+        <table>
+            <tr>
+                <td><p>Введите наименование товара </p></td>
+                <td><input type="text" name="Name" /> </td>
+            </tr>
+            <tr>
+                <td><p>Введите описание :</p></td>
+                <td>
+                    <textarea name="Description" />
+                </td>
+            </tr>
+            <tr>
+                <td><p>Введите цену :</p></td>
+                <td>
+                    <input type="text" name="Price" />
+                </td>
+            </tr>
+            <tr>
+                <td><p>Введите путь до изображения :</p></td>
+                <td>
+                    <input type="text" name="ImagePath" />
+                </td>
+            </tr>
+            <tr><td><input type="submit" value="Исправить" /> </td><td></td></tr>
+        </table>
+    </form>
+</body>
+</html>
+

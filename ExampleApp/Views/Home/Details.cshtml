@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Детальная информация</title>
+</head>
+<body>
+    <div>
+        <div class="product-item">
+            <table>
+                <tr>
+                    <td rowspan="2"><img src=@ViewBag.ImagePath></td>
+                    <td>Наименование</td>
+                    <td>Описание</td>
+                    <td>Цена</td>
+                </tr>
+                <tr>
+                    <td>@ViewBag.Name</td>
+                    <td>@ViewBag.Description</td>
+                    <td>₽ @ViewBag.Price</td>
+                    <td>@Html.ActionLink("Перейти к покупке", "Buy", "Home")</td>
+                    <td>@Html.ActionLink("Редактировать товар", "EditItem", "Home")</td>
+                    <td>@Html.ActionLink("Удалить товар", "DeleteItem", "Home")</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

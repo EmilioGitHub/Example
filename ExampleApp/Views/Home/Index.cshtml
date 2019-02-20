@@ -1,34 +1,30 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Интернет магазин</title>
 </head>
 <body>
-    <div>
-        <h3>Ассортимент</h3>
-        <p>@ViewBag.A</p>
-        <table>
+    <table>
+        <tr>
+            <td><p>Наименование товара</p></td>
+            <td><p>Описание</p></td>
+            <td><p>Цена</p></td>
+            <td></td>
+        </tr>
+        @foreach (var i in ViewBag.Items)
+        {
             <tr>
-                <td><strong>Название</strong></td>
-                <td><p><strong>О товаре</strong></p></td>
-                <td><p><strong>Цена</strong></p></td>
+                <td><p>@i.Name</p></td>
+                <td><p>@i.Description</p></td>
+                <td><p><img width="189" height="255" src=@i.ImagePath /></p></td>
+                <td><p>@i.Price</p></td>
+                <td><p><a href="/Home/Details/@i.Id">Подробнее</a></p></td>
             </tr>
-            @foreach(var p in ViewBag.Products)
-            {
-            <tr>
-                <td><p>@p.Name</p></td>
-                <td><p>@p.Description</p></td>
-                <td><p>@p.Price</p></td>
-                <td><p><a href="Home/Buy/@p.Id">Купить</a></p></td>
-            </tr>
-            }
-        </table>
-    </div>
+        }
+    </table>
 </body>
 </html>

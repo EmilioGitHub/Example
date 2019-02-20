@@ -14,7 +14,7 @@ namespace ExampleApp
     {
         protected void Application_Start()
         {
-            Database.SetInitializer(new ProductDbInitializer());
+            //Database.SetInitializer(new ProductDbInitializer());
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

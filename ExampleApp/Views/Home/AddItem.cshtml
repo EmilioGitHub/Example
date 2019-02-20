@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "AddItem";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Добавление товаров</title>
+</head>
+<body>
+    <h3>AddItem</h3>
+    <form method="post" action="">
+        <input type="hidden" value="@ViewBag.Id" name="Id" />
+        <table>
+            <tr>
+                <td>Введите наименование товара</td>
+                <td><input type="text" name="Name" /> </td>
+            </tr>
+            <tr>
+                <td>Введите описание :</td>
+                <td>
+                    <textarea rows="5" cols="20" name="Description"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Введите цену :</td>
+                <td>
+                    <input type="text" name="Price" />
+                </td>
+            </tr>
+            <tr>
+                <td>Введите путь до изображения :</td>
+                <td>
+                    <input type="text" name="ImagePath" />
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Добавить" /> 
+                    </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+

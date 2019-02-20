@@ -21,8 +21,9 @@ namespace ExampleApp.Controllers
 
         public ActionResult Details(int id)
         {
-            ViewBag.Id = id;
-            return View();
+            var item = db.Items.Where(x => x.Id ==id);
+            //ViewBag.Id = id;
+            return View(item);
         }
 
         [HttpGet]
